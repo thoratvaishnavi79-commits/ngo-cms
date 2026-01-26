@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<section class="banner">
+    <div class="banner-text">
+        <h1>Welcome to NGO CMS</h1>
+        <p>Together we create impact and change lives.</p>
+    </div>
+</section>
+
+<section class="vision-mission">
+    <div class="vm-box">
+        <h2>Our Vision</h2>
+        <p>
+            To build a compassionate society where every individual
+            has access to education, health, and dignity.
+        </p>
+    </div>
+
+    <div class="vm-box">
+        <h2>Our Mission</h2>
+        <p>
+            To empower underprivileged communities through
+            sustainable development initiatives.
+        </p>
+    </div>
+</section>
+<section class="stats-section">
+    <h2 class="section-title">Our Stats</h2>
+
+    <div class="stats-container">
+        <div class="stat-box">
+            <h3>3067</h3>
+            <p>Campaigns Hosted</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>10000+</h3>
+            <p>Students Educated</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>50000+</h3>
+            <p>Patients Treated</p>
+        </div>
+
+        <div class="stat-box">
+            <h3>2000+</h3>
+            <p>Volunteers Across India</p>
+        </div>
+    </div>
+</section>
+<section class="initiative-section">
+    <h2 class="section-title">Our Campaign Initiative</h2>
+
+    <div class="initiative-container">
+        <div class="initiative-card">
+            <img src="{% static 'images/init1.jpg' %}" alt="">
+            <h3>Empowering Girls Education</h3>
+            <p>Small description about the initiative</p>
+            <a href="#" class="btn">See Details</a>
+        </div>
+
+        <div class="initiative-card">
+            <img src="{% static 'images/init2.jpg' %}" alt="">
+            <h3>Committed to Child Nutrition</h3>
+            <p>Small description about the initiative</p>
+            <a href="#" class="btn">See Details</a>
+        </div>
+
+        <div class="initiative-card">
+            <img src="{% static 'images/init3.jpg' %}" alt="">
+            <h3>Manav Kartavya</h3>
+            <p>Small description about the initiative</p>
+            <a href="#" class="btn">See Details</a>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

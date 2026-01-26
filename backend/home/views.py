@@ -1,5 +1,6 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Banner
 
 def homepage(request):
-    return HttpResponse("Home Page Working ✔️")
-
+    banners = Banner.objects.all()
+    return render(request, 'home.html', {'banners': banners})

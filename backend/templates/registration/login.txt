@@ -22,7 +22,11 @@
     <button type="submit">Login</button>
   </form>
 
-  <p>Don't have an account? <a href="{% url 'auth_register' %}">Register</a></p>
+<p>
+    Don’t have an account?
+    <a href="{% url 'auth_register' %}">Register</a>
+</p>
+
   <p><a href="{% url 'homepage' %}">Back to Home</a></p>
 </body>
 </html>

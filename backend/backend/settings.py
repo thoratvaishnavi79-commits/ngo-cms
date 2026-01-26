@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-0pd9nkm7#bhmnl4(i^n84a5oz)uc!1td^9^s=0t#2of7d*v!)6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vaishnavi29.pythonanywhere.com']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'vaishnavi29.pythonanywhere.com'
+]
+
 
 
 
@@ -41,7 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
 'authapp',
 'home',
-
+'dashboard',   # ← ADD THIS
 
 ]
 
@@ -60,10 +65,11 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / "templates" ],
+        'DIRS': [BASE_DIR / 'templates'],  # ⭐ THIS LINE
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -71,6 +77,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 
 WSGI_APPLICATION = 'backend.wsgi.application'
@@ -105,6 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_URL = '/admin/login/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
@@ -124,4 +132,13 @@ USE_TZ = True
 STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 

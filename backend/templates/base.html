@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NGO CMS</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+{% include 'header.html' %}
+
+{% block content %}
+{% endblock %}
+<footer class="footer">
+    <div class="footer-container">
+
+        <div>
+            <h4>Contact Us</h4>
+            <p>Address of the organization</p>
+            <p>Mobile: 9999999999</p>
+            <p>Email: email@gmail.com</p>
+        </div>
+
+        <div>
+            <h4>Quick Link</h4>
+            <a href="#">Home</a><br>
+            <a href="#">About</a><br>
+            <a href="#">Contact</a><br>
+            <a href="#">Media</a>
+        </div>
+
+        <div>
+            <h4>Social Connect</h4>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>Twitter</p>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
