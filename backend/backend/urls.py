@@ -5,8 +5,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls')),
-    path('dashboard/', include('dashboard.urls')),
+
+    path('', include('home.urls')),          # Home
+    path('about/', include('about.urls')),   # About
+    path('dashboard/', include('dashboard.urls')),  # CMS
+    path('accounts/', include('accounts.urls')),    # Login
 ]
 
 if settings.DEBUG:

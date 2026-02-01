@@ -1,0 +1,164 @@
+:root {
+    --primary-brown: #6b4f3f;   /* warm brown */
+    --light-brown: #f5efe9;     /* soft background */
+}
+
+/* =======================
+   HERO SECTION
+======================= */
+.about-hero {
+    background-color: var(--primary-brown);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.about-hero h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.about-hero p {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+/* =======================
+   MAIN CONTAINER
+======================= */
+.about-container {
+    width: 70%;
+    margin: 40px auto;
+}
+
+/* =======================
+   CARDS / SECTIONS
+======================= */
+.about-card {
+    background: var(--light-brown);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.about-card h2 {
+    color: var(--primary-brown);
+    margin-bottom: 15px;
+}
+
+.about-card ul {
+    padding-left: 20px;
+}
+
+.about-card li {
+    margin-bottom: 8px;
+}
+
+/* =======================
+   TEAM SECTION
+======================= */
+.team-row {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.team-name {
+    font-weight: bold;
+    margin: 5px 0 2px;
+}
+
+.team-role {
+    font-size: 14px;
+    color: #555;
+}
+
+/* =======================
+   IMPACT LIST
+======================= */
+.about-card ul li {
+    margin-bottom: 8px;
+}
+
+/* =======================
+   CTA SECTION (DONATE / VOLUNTEER)
+======================= */
+.about-cta {
+    background-color: var(--primary-brown);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+    border-radius: 12px;
+    margin: 60px auto;
+    width: 70%;
+}
+
+.about-cta p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* CTA BUTTONS */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: white;
+    color: var(--primary-brown);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    opacity: 0.9;
+}
+.about-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.about-card li {
+    color: #3b2a20;   /* dark brown */
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+/* FORCE TEXT VISIBILITY INSIDE ABOUT CARDS */
+.about-card,
+.about-card p,
+.about-card li,
+.about-card span,
+.about-card div {
+    color: #2b1d14;   /* dark readable brown */
+}
+
+

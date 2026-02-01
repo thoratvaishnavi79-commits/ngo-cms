@@ -46,8 +46,9 @@ INSTALLED_APPS = [
     'rest_framework',
 'authapp',
 'home',
-'dashboard',   # ← ADD THIS
-
+'dashboard',
+'about',# ← ADD THIS
+'accounts'
 ]
 
 MIDDLEWARE = [

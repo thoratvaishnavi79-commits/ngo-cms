@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - About Page</title>
+    <link rel="stylesheet" href="{% static 'css/about_dashboard.css' %}">
+</head>
+<body>
+
+<div class="dashboard-wrapper">
+
+    <h1 class="dashboard-title">Admin Dashboard – About Page</h1>
+
+    <!-- OUR STORY -->
+    <div class="card">
+        <h2>Our Story</h2>
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="content" rows="6">{{ story.content }}</textarea>
+            <button class="btn-primary" name="story_submit">Save</button>
+        </form>
+    </div>
+
+    <!-- CORE VALUES -->
+    <div class="card">
+        <h2>Core Values</h2>
+
+        <table>
+            <tr>
+                <th>Value</th>
+                <th>Actions</th>
+            </tr>
+            {% for v in core_values %}
+            <tr>
+                <td>{{ v.value }}</td>
+                <td>
+                    <a class="btn-danger" href="{% url 'delete-core' v.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <form method="post" class="inline-form">
+            {% csrf_token %}
+            <input type="text" name="value" placeholder="New core value">
+            <button class="btn-primary" name="add_core">Add</button>
+        </form>
+    </div>
+
+    <!-- PROGRAMS -->
+    <div class="card">
+       <h2>Programs</h2>
+
+<ul>
+    {% for program in programs %}
+        <li>
+            {{ program.title }}
+            <a href="{% url 'delete-program' program.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<form method="POST" action="{% url 'add-program' %}">
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Program title" required>
+    <button type="submit">Add</button>
+</form>
+
+
+    <!-- TEAM MEMBERS -->
+    <div class="card">
+        <h2>Team Members</h2>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+            {% for m in team %}
+            <tr>
+                <td>{{ m.name }}</td>
+                <td>{{ m.role }}</td>
+                <td>
+                    <a class="btn-danger" href="{% url 'delete-team' m.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <form method="post" enctype="multipart/form-data" class="inline-form">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="role" placeholder="Role">
+            <input type="file" name="image">
+            <button class="btn-primary" name="add_team">Add</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

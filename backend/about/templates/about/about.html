@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<div class="about-hero">
+    <h1>Welcome to NGO Name</h1>
+    <p>Making a difference, one step at a time.</p>
+</div>
+
+<div class="about-container">
+
+    <!-- Mission & Vision -->
+    <div class="about-card">
+        <h2>Our Mission and Vision</h2>
+        <p><strong>Mission:</strong> To provide quality education and healthcare to underprivileged communities.</p>
+        <p><strong>Vision:</strong> A world where every individual lives with dignity and opportunity.</p>
+    </div>
+
+    <!-- Our Story -->
+    <div class="about-card">
+        <h2>Our Story</h2>
+        <p>{{ story.content }}</p>
+    </div>
+
+    <!-- Core Values -->
+    <div class="about-card">
+        <h2>Our Core Values</h2>
+        <ul>
+            {% for value in core_values %}
+                <li>{{ value.value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Programs -->
+<div class="about-card">
+    <h2>Our Programs</h2>
+
+    <ul>
+        {% for program in programs %}
+            <li>{{ program.title }}</li>
+        {% empty %}
+            <li>No programs available.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+  <!-- Team -->
+<div class="about-card">
+    <h2>Meet Our Team</h2>
+
+    <div class="team-row">
+        {% for member in team_members %}
+            <div class="team-member">
+                {% if member.image %}
+                    <img src="{{ member.image.url }}" alt="{{ member.name }}">
+                {% endif %}
+                <p class="team-name">{{ member.name }}</p>
+                <p class="team-role">{{ member.role }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- Impact -->
+<div class="about-card">
+    <h2>Our Impact</h2>
+    <ul>
+        <li>Educated over <strong>5,000+</strong> children.</li>
+        <li>Conducted <strong>50+</strong> health camps.</li>
+        <li>Empowered <strong>200+</strong> women through skill training.</li>
+    </ul>
+</div>
+
+<!-- Call to Action -->
+<div class="about-cta">
+    <p>Become a part of the change. Volunteer today or donate to help us transform lives.</p>
+    <div class="cta-buttons">
+        <a href="#" class="btn-primary">Donate Now</a>
+        <a href="#" class="btn-secondary">Volunteer Today</a>
+    </div>
+</div>
+
+
+
+</div>
+
+{% endblock %}

@@ -1,6 +1,8 @@
 from django.urls import path
 from .views import dashboard_home, manage_slider, delete_slider
 
+app_name = 'dashboard'   # 🔥 THIS LINE IS MANDATORY
+
 urlpatterns = [
     path('', dashboard_home, name='dashboard'),
     path('slider/', manage_slider, name='manage-slider'),

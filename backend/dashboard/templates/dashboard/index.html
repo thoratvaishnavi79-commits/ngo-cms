@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+
+<div class="dashboard-wrapper">
+
+    <h1 class="dashboard-title">Admin Dashboard</h1>
+
+    <!-- QUICK ACTION CARDS -->
+    <div class="dashboard-cards">
+
+        <div class="card">
+            <h2>Home Page</h2>
+            <p>Manage banners and homepage content.</p>
+            <a href="{% url 'dashboard:manage-slider' %}" class="btn-primary">
+                Manage Home Slider
+            </a>
+            <br><br>
+            <a href="{% url 'home:home' %}" target="_blank">
+                View Home Page →
+            </a>
+        </div>
+<a href="{% url 'about:dashboard' %}" class="btn-primary">
+    Manage About Page
+</a>
+
+        <div class="card">
+            <h2>About Page</h2>
+            <p>Edit story, values, programs, and team.</p>
+            <a href="{% url 'about:dashboard' %}" class="btn-primary">
+                Manage About Page
+            </a>
+            <br><br>
+            <a href="{% url 'about:about' %}" target="_blank">
+                View About Page →
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

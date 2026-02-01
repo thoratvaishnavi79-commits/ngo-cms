@@ -20,7 +20,8 @@
             width: 400px;
         }
 
-        input[type="text"], input[type="file"] {
+        input[type="text"],
+        input[type="file"] {
             width: 100%;
             margin-bottom: 15px;
             padding: 8px;
@@ -32,6 +33,7 @@
             color: white;
             border: none;
             border-radius: 4px;
+            cursor: pointer;
         }
 
         table {
@@ -41,7 +43,8 @@
             border-collapse: collapse;
         }
 
-        table th, table td {
+        table th,
+        table td {
             padding: 10px;
             border: 1px solid #ddd;
             text-align: center;
@@ -63,6 +66,7 @@
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
+
     <label>Image Title</label>
     <input type="text" name="title" required>
 
@@ -85,10 +89,10 @@
         <td>{{ forloop.counter }}</td>
         <td>{{ slider.title }}</td>
         <td>
-            <img src="{{ slider.image.url }}">
+            <img src="{{ slider.image.url }}" alt="{{ slider.title }}">
         </td>
         <td>
-            <a class="delete" href="{% url 'delete-slider' slider.id %}">
+            <a class="delete" href="{% url 'dashboard:delete-slider' slider.id %}">
                 Delete
             </a>
         </td>
@@ -101,7 +105,7 @@
 </table>
 
 <br>
-<a href="/dashboard/">⬅ Back to Dashboard</a>
+<a href="{% url 'dashboard:dashboard' %}">⬅ Back to Dashboard</a>
 
 </body>
 </html>
